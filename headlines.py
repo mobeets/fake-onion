@@ -42,7 +42,9 @@ def combine(infiles=[DATAFILE_DOI, DATAFILE_ONION], n=20):
     generate(M, n, '\n'.join(ts))
 
 if __name__ == '__main__':
+    import sys
     # combine()
-    markov()
+    N = int(sys.argv[1]) if len(sys.argv) > 1 else 20
+    markov(n=N)
 
     # less data/headlines.txt | grep "suspiciously funny phrase"
