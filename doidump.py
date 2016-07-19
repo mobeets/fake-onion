@@ -15,14 +15,17 @@ def write(titles, outfile):
 def main(outfile=OUTFILE):
     titles = []
     cursor = "*"
-    for i in xrange(20):
+    for i in xrange(200):
         x = json.loads(urllib.urlopen(URL.format(cursor=cursor)).read())
         y = x['message']
         ts = get_titles(y['items'])
         titles.extend(ts)
-        for title in ts:
-            print title
+        # for title in ts:
+        #     print title
         cursor = y['next-cursor']
+        if i % 20 == 0:
+            print i, cursor
+            write(titles, outfile)
     write(titles, outfile)
 
 
