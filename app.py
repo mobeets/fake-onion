@@ -14,19 +14,6 @@ USERNAME = 'DicedOnionBot'
 
 RUN_EVERY_N_SECONDS = 60*10 # e.g. 60*5 = tweets every five minutes
 
-start_tweets = ["Woman Injured In Rush To Save Relationship", "Child Therapist Excited To Have Normal Conversation", "Congressman Hurt To Discover Cure For Whatever He's Getting", "Report: Whites More Likely To Be Driven To Extinction By Humans", "Poll Shows Majority Of Americans Just Want To Feel Something, Anything", "Relationship Experts Recommend Standing Up At Airport Burrito, Restaurant", "TSA Agent Can't Bring Himself To Care About Stupid Bullshit Again", "McDonald's Now Offering Sainthood To Anyone In Character Costume", "New Study Finds 85% Of Americans Would Like To Consume Much More"]
-
-def main_starter():
-    handle = twitter_handle()
-    for message in start_tweets[::-1]:
-        message = '"' + message + '"'
-        if message not in list_of_tweets(handle):
-            print message
-            submit_tweet(message, handle)
-            time.sleep(10)
-        else:
-            print "[Already said.]"
-
 def twitter_handle():
     return Twython(CONSUMER_KEY, CONSUMER_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
 
@@ -63,4 +50,4 @@ def main():
         time.sleep(RUN_EVERY_N_SECONDS)
 
 if __name__ == '__main__':
-    main_starter()
+    main()
