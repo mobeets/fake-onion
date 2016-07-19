@@ -12,7 +12,7 @@ TWEET_LENGTH = 140
 TWEET_URL_LENGTH = 21
 USERNAME = 'DicedOnionBot'
 
-RUN_EVERY_N_SECONDS = 60*10 # e.g. 60*5 = tweets every five minutes
+RUN_EVERY_N_SECONDS = 60*30 # e.g. 60*5 = tweets every five minutes
 
 def twitter_handle():
     return Twython(CONSUMER_KEY, CONSUMER_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
