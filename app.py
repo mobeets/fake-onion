@@ -46,7 +46,7 @@ def main():
     while True:
         message = get_message(mdl, corpus, handle)
         print message
-        # submit_tweet(message, handle)
+        submit_tweet(message, handle)
         time.sleep(RUN_EVERY_N_SECONDS)
 
 if __name__ == '__main__':
